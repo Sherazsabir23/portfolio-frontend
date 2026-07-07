@@ -1,0 +1,38 @@
+
+@import "tailwindcss";
+
+body{
+  
+}
+
+.heading-font {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.body-font {
+  font-family: "Inter", sans-serif;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #6b7280 !important; /* gray-500 */
+  width: 20px;
+  height: 20px;
+}
+
+/* Arrow icon size */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important; /* smaller size */
+  font-weight: bold;
+}
+
+/* Optional padding + circle look */
+.swiper-button-next,
+.swiper-button-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+}
