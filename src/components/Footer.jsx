@@ -28,9 +28,10 @@ function Footer() {
           <ul className="flex flex-wrap justify-center gap-8 text-white font-medium">
             <li>
               <Link
-                to="skills"
+                to="skill"
                 smooth={true}
                 duration={500}
+                offset={-50}
                 className="cursor-pointer hover:text-gray-200 transition"
               >
                 Skills
@@ -39,9 +40,10 @@ function Footer() {
 
             <li>
               <Link
-                to="portfolio"
+                to="project"
                 smooth={true}
                 duration={500}
+                offset={-50}
                 className="cursor-pointer hover:text-gray-200 transition"
               >
                 Portfolio
@@ -53,6 +55,7 @@ function Footer() {
                 to="contact"
                 smooth={true}
                 duration={500}
+                offset={-30}
                 className="cursor-pointer hover:text-gray-200 transition"
               >
                 Contact

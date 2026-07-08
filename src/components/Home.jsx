@@ -1,12 +1,23 @@
 import react, { useState } from "react";
 import { Link } from "react-scroll"
+import {motion} from "framer-motion"
 
 function Home() {
     return (
         <section id="home">
             <div className="w-full flex justify-center flex-col items-center py-10 mt-10 md:py-18">
-                <div className=" w-[200px] h-[200px]  rounded-full bg-[url('/hero.jpeg')] bg-cover bg-center p ">
-                </div>
+                <motion.div
+                    animate={{
+                        y: [0, -10, 0],
+                    }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut",
+                    }}
+                    className="w-[200px] h-[200px] rounded-full bg-[url('/hero.jpeg')] bg-cover bg-center"
+                ></motion.div>
                 <div className="w-full text-white body-font flex justify-center items-center flex-col font-bold text-center ">
                     <h1 className=" md:text-4xl text-3xl max-w-md w-full  pt-3" >Transforming Ideas Into Powerful <span className="bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
                         Digital Experiences.

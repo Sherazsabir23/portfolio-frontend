@@ -32,6 +32,19 @@ function Nav() {
                 Home
               </Link>
             </li>
+             <li>
+              <Link
+                to="skill"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+                activeClass="text-blue-500"
+                className="cursor-pointer transition duration-300 hover:text-blue-500"
+              >
+                My Skills
+              </Link>
+            </li>
 
             <li>
               <Link
@@ -47,19 +60,7 @@ function Nav() {
               </Link>
             </li>
 
-            <li>
-              <Link
-                to="skill"
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}
-                activeClass="text-blue-500"
-                className="cursor-pointer transition duration-300 hover:text-blue-500"
-              >
-                My Skills
-              </Link>
-            </li>
+           
 
             <li>
               <Link
