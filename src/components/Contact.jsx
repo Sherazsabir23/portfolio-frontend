@@ -32,9 +32,7 @@ function Contact() {
 
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/send-email`,
-        formData,{
-           withCredentials: true,
-        }
+        formData
       );
 
    toast.success('Email sent successfully')
