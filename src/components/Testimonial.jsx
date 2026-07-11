@@ -9,8 +9,8 @@ function Testimonial() {
   const testimonials = [
     {
       id: 1,
-      name: "John Carter",
-      role: "Business Owner",
+      name: "Muhammad Shakir",
+      role: "Software Engineer",
       image: "https://media.licdn.com/dms/image/v2/D4D03AQHKAwRGIPw0Rw/profile-displayphoto-crop_800_800/B4DZw4chKaHMAI-/0/1770473527951?e=1785369600&v=beta&t=SttZvwBqAwoJPCCpi86GG0wzonuDIn99a7sUpcXBRzQ",
       review:
         "Worked with Sheraz on a MERN project and he did a great job. He is very good with React and Node and got the work done quickly. Highly recommend him",
