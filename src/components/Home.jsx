@@ -31,7 +31,8 @@ function Home() {
                         spy={true}
                         offset={-30}
                         activeClass="text-blue-500" className=" px-6 py-3 rounded-full cursor-pointer hover:bg-gray-300 transition-all duration-150 text-black bg-white whitespace-nowrap " >Get in Touch</Link>
-                    <button className="px-6 py-3 bg-transparent cursor-pointer  rounded-full border-2 text-white border-white whitespace-nowrap">Download CV</button>
+                    <a href="/CV.pdf" download="Sheraz.Dev_CV.pdf"   className="px-6 py-3 bg-transparent cursor-pointer  rounded-full border-2 text-white border-white whitespace-nowrap">
+                        <button className="cursor-pointer">Download CV</button></a>
                 </div>
             </div>
 

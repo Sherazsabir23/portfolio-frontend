@@ -70,14 +70,14 @@ function Projects() {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
 
                     <a href={project.demo} target="_blank">
-                      <button className="bg-blue-500 hover:bg-blue-600 transition px-6 py-3 rounded-full text-white flex items-center justify-center gap-2 w-full">
+                      <button className="bg-blue-500 hover:bg-blue-600 transition cursor-pointer px-6 py-3 rounded-full text-white flex items-center justify-center gap-2 w-full">
                         <FiExternalLink />
                         Live Demo
                       </button>
                     </a>
 
                     <a href={project.github} target="_blank">
-                      <button className="border border-gray-600 hover:border-blue-500 hover:text-blue-500 transition px-6 py-3 rounded-full text-white flex items-center justify-center gap-2 w-full">
+                      <button className="border border-gray-600 hover:border-blue-500 cursor-pointer hover:text-blue-500 transition px-6 py-3 rounded-full text-white flex items-center justify-center gap-2 w-full">
                         <FiGithub />
                         GitHub
                       </button>
