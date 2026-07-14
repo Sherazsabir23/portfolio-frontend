@@ -15,28 +15,11 @@ function Projects() {
       title: "Blog Application",
       description:
         "A full stack MERN blogging platform with authentication, image uploads and search.",
-      image: "https://images.openai.com/static-rsc-4/APPdwUT00a9JVvS62BIb_619rkRdJub-XXuVB7lAKj3FhW93MocNorKV5eEJ9WvGd5vp5YRuaPOzurujEJSGGuv4MhMWAlL45mhjWcuBj7Hm8zF7qB20jyWolH5z_V6vntHris32r5vKf4xZANV0tG1j7Dajj4UcENkI6qCtVVY?purpose=inline",
-      demo: "#",
-      github: "#",
+      image: "/zentro.png",
+      demo: "https://zentro-frontend-acwj.vercel.app/",
+      github: "https://github.com/Sherazsabir23?tab=repositories",
     },
-    {
-      id: 2,
-      title: "E-Commerce Store",
-      description:
-        "Modern e-commerce website with admin panel, cart system and authentication.",
-      image: "https://images.openai.com/static-rsc-4/vjSEHX0cEMDc07V21fyQVkxTzCZwGzXqrMRc0iAJ9nFWCnvhr3DINM5JLfuMvxr_S2cjHBvA7HUzgZYQm3AuMKQRJgewTrDyC5cnDKDT0UEjulRb_RFD6ixS4mSpiH00jJibaYzBBQx-0jS_W5CLnz8pXse2eowid38D1c_frkI?purpose=inline",
-      demo: "#",
-      github: "#",
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description:
-        "Responsive portfolio built with React and Tailwind CSS with smooth UI.",
-      image: "https://images.openai.com/static-rsc-4/mpMynvYlczwhGXnnBifLEPhwndQ_Bey9u5jgdMqkScSTf33cGk3q9KyxyRGYMUyA-BUoFzXfWegCz5L8mkBaYMdjX8u3eevMEkDIAsLt0iABygGnCXo-pHb6pphK0D4axMyP_cU0TF0A42CvsStrfnhuSRCcqqW9YL2MvyN8zDE?purpose=inline",
-      demo: "#",
-      github: "#",
-    },
+    
   ];
 
   return (
