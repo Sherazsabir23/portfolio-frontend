@@ -17,44 +17,29 @@ function Testimonial() {
     },
     {
       id: 2,
-      name: "Emily Johnson",
-      role: "Startup Founder",
-      image: "https://randomuser.me/api/portraits/women/65.jpg",
+      name: "Muzalfa BiBi",
+      role: "Senior Engineer at NexaSecure",
+      image: "https://media.licdn.com/dms/image/v2/D4D35AQFC5luZR3nKDg/profile-framedphoto-shrink_800_800/B4DZ5TwTTKJoAk-/0/1779521631891?e=1784628000&v=beta&t=EHk6AQbj1PAgoYewp7EOpsbYUVK7fLqgnJmmetDiag4",
       review:
-        "Great communication and excellent development skills. Highly recommended for MERN projects.",
+        "Sheraz was a great teammate during our internship at NexaSecure. His MERN Stack skills and problem solving approach made him a valuable part of the team.",
     },
     {
       id: 3,
-      name: "Michael Brown",
+      name: "Muskan Fatima",
       role: "Entrepreneur",
-      image: "https://randomuser.me/api/portraits/men/52.jpg",
+      image: "https://media.licdn.com/dms/image/v2/D4D35AQEuGVti3ETxxA/profile-framedphoto-shrink_800_800/B4DZ2dNVEDHoAg-/0/1776459010668?e=1784628000&v=beta&t=qEhARIApwI19UEVgq7wsvggG45jcrDHLHPZYIMMVtzo",
       review:
-        "The project was completed before the deadline with a clean and modern design.",
+        "I had the opportunity to work with Sheraz on a project, and it was a great experience. He is a skilled MERN Stack developer, communicates well, and is dedicated to delivering quality work.",
     },
     {
       id: 4,
-      name: "Sarah Wilson",
-      role: "UI Designer",
-      image: "https://randomuser.me/api/portraits/women/33.jpg",
+      name: "Muhammad Ali",
+      role: " AI & Agentic Engineer ",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQFPhrSaC7_nmw/profile-displayphoto-crop_800_800/B4DZ67l47NIYAI-/0/1781263735162?e=1785369600&v=beta&t=cjENTtCBWtNRARX5QUN3HuJTGv5GwvRthmi69bhcOpM",
       review:
-        "Very professional developer. Attention to detail and code quality was impressive.",
+        "Sheraz is a great person to work with. He's honest, committed to his work, and makes sure everything is completed properly. Wishing him all the best.",
     },
-    {
-      id: 5,
-      name: "David Miller",
-      role: "Agency Owner",
-      image: "https://randomuser.me/api/portraits/men/83.jpg",
-      review:
-        "Working with Sheraz was a great experience. Everything worked smoothly from start to finish.",
-    },
-    {
-      id: 6,
-      name: "Olivia Moore",
-      role: "Freelance Client",
-      image: "https://randomuser.me/api/portraits/women/21.jpg",
-      review:
-        "One of the best developers I've worked with. Responsive, friendly and highly skilled.",
-    },
+  
   ];
 
   return (
