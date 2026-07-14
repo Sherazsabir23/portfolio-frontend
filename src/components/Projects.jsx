@@ -12,9 +12,9 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Blog Application",
+      title: "Zentro",
       description:
-        "A full stack MERN blogging platform with authentication, image uploads and search.",
+        "A full stack Multi Vendor Ecommerce site.",
       image: "/zentro.png",
       demo: "https://zentro-frontend-acwj.vercel.app/",
       github: "https://github.com/Sherazsabir23?tab=repositories",
