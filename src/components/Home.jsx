@@ -191,7 +191,7 @@ I build fast, scalable MERN applications with clean architecture and seamless us
             <div className="p-3 overflow-hidden rounded-[18px]">
               <div className="rounded-[18px] overflow-hidden aspect-[4/5] border border-[#E2E8F0] group">
                 <div
-                  className="w-full h-full bg-[url('/hero.png')] bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  className="w-full h-full bg-[url('/hero.webp')] bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
               </div>
             </div>

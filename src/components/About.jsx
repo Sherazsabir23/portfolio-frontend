@@ -71,7 +71,7 @@ function About() {
             transition={{ duration: 0.7 }}
             className="space-y-5"
           >
-            <div className="relative rounded-[28px] overflow-hidden aspect-[4/5] border border-[#E2E8F0] bg-[url('/about.png')] bg-cover bg-center shadow-[0_20px_50px_rgba(15,23,42,0.1)]">
+            <div className="relative rounded-[28px] overflow-hidden aspect-[4/5] border border-[#E2E8F0] bg-[url('/about.webp')] bg-cover bg-center shadow-[0_20px_50px_rgba(15,23,42,0.1)]">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/85 backdrop-blur-xl border border-white/60 px-4 py-3">
                 <p className="text-xs text-[#94A3B8]">based in</p>

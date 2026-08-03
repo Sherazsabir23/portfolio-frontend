@@ -49,7 +49,7 @@ const Nav = () => {
             className="cursor-pointer"
           >
             <h2 className="text-2xl font-bold tracking-tight">
-              Muhammad<span className="text-blue-600">.</span>
+            Sheraz<span className="text-blue-600">.</span>
             </h2>
           </Link>
 
