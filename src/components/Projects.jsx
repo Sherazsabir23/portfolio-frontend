@@ -1,129 +1,189 @@
-import React, { useRef, useState } from "react";
-import { FiExternalLink, FiGithub, FiArrowRight } from "react-icons/fi";
+import React from "react";
+import { motion } from "framer-motion";
+import { FiExternalLink, FiGithub, FiArrowUpRight } from "react-icons/fi";
 
 const projects = [
   {
     id: 1,
-    title: "zentro",
-    ext: ".app",
-    description: "A full-stack multi-vendor ecommerce platform.",
+    title: "Zentro",
+    description:
+      "A full-stack multi-vendor ecommerce platform — vendor storefronts, cart, checkout and an admin dashboard, built solo end to end.",
     image: "/zentro.png",
     demo: "https://zentro-frontend-acwj.vercel.app/",
     github: "https://github.com/Sherazsabir23?tab=repositories",
-    stack: ["react", "node", "mongodb"],
+    stack: ["React", "Node.js", "Express", "MongoDB"],
   },
-];
+ {
+    id: 2,
+    title: "Kyphora",
+    description:
+      "A secure SaaS vault for storing and managing sensitive credentials, with encrypted storage and access control built for teams.",
+    image: "/kyphora.png",
+    demo: "https://your-kyphora-demo-url.vercel.app/",
+    github: "https://github.com/Sherazsabir23?tab=repositories",
+    stack: ["React", "Node.js", "Express", "MongoDB"],
+  },
+]
 
-function Projects() {
-  const trackRef = useRef(null);
-  const [progress, setProgress] = useState(0);
-
-  const handleScroll = () => {
-    const el = trackRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    setProgress(max > 0 ? el.scrollLeft / max : 0);
-  };
+function ProjectCard({ project, index }) {
+  const reversed = index % 2 === 1;
 
   return (
-    <section id="project" className="w-full py-16">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <p className="font-mono text-sm text-[#6FA88F] mb-3">
-              <span className="text-[#6B6455]">04</span> — projects
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl text-[#F2EDE3]">
-              /projects
-            </h2>
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-16 ${
+        reversed ? "lg:[&>*:first-child]:order-2" : ""
+      }`}
+    >
+      {/* Browser Mockup */}
+      <div className="flex justify-center">
+        <motion.div
+          whileHover="hover"
+          className="relative w-full max-w-[580px] rounded-[26px] border border-[#E2E8F0] bg-white overflow-hidden shadow-[0_25px_60px_rgba(15,23,42,0.12)]"
+        >
+          {/* Browser Top */}
+          <div className="flex items-center gap-2 px-5 py-3 border-b border-[#E2E8F0] bg-[#F8FAFC]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#CBD5E1]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#CBD5E1]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED]" />
+
+            <span className="ml-4 text-[11px] font-mono text-[#94A3B8] truncate">
+              {project.demo.replace("https://", "")}
+            </span>
           </div>
-          <p className="hidden sm:flex items-center gap-2 font-mono text-xs text-[#6B6455]">
-            scroll <FiArrowRight />
-          </p>
-        </div>
-      </div>
 
-      {/* Horizontal file rail — the signature element */}
-      <div
-        ref={trackRef}
-        onScroll={handleScroll}
-        className="flex gap-6 overflow-x-auto px-4 md:px-6 pb-6 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {/* left/right scroll padding so first/last card can center-snap nicely */}
-        <div className="shrink-0 w-0 md:w-[calc((100vw-72rem)/2)]" />
-
-        {projects.map((project) => (
-          <article
-            key={project.id}
-            className="snap-start shrink-0 w-[85vw] sm:w-[420px] bg-[#1C1913] border border-[#332D22]"
-          >
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#332D22] font-mono text-xs text-[#6B6455]">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#6B6455]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#6B6455]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E8A33D]" />
-              <span className="ml-2">
-                {project.title}
-                <span className="text-[#6FA88F]">{project.ext}</span>
-              </span>
-            </div>
-
-            <img
+          {/* Image */}
+          <div className="relative bg-[#F8FAFC] flex items-center justify-center p-6">
+            <motion.img
               src={project.image}
               alt={project.title}
-              className="w-full h-52 object-cover border-b border-[#332D22]"
+              variants={{
+                hover: {
+                  scale: 1.04,
+                },
+              }}
+              transition={{ duration: 0.5 }}
+              className="w-full rounded-xl object-contain"
             />
 
-            <div className="p-6">
-              <h3 className="font-display text-2xl text-[#F2EDE3] mb-2 capitalize">
-                {project.title}
-              </h3>
-              <p className="text-[#9C9483] font-body text-sm leading-6 mb-4">
-                {project.description}
-              </p>
+            {/* Hover Overlay */}
+            <motion.div
+              variants={{ hover: { opacity: 1 } }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-[#0F172A]/60 backdrop-blur-sm flex items-center justify-center gap-4"
+            >
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0F172A]"
+              >
+                <FiExternalLink />
+                Live Preview
+              </a>
 
-              <div className="flex flex-wrap gap-2 font-mono text-[11px] mb-6">
-                {project.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="px-2 py-1 border border-[#332D22] text-[#6FA88F]"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-3 font-mono text-xs">
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[#E8A33D] text-[#15130F] hover:bg-[#f0b35f] transition-colors"
-                >
-                  <FiExternalLink /> live
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border border-[#332D22] text-[#F2EDE3] hover:border-[#6FA88F] hover:text-[#6FA88F] transition-colors"
-                >
-                  <FiGithub /> code
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
-
-        <div className="shrink-0 w-4" />
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-medium text-white"
+              >
+                <FiGithub />
+                GitHub
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* scroll progress track */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="h-px bg-[#332D22] relative overflow-hidden">
-          <div
-            className="absolute top-0 left-0 h-px bg-[#E8A33D] transition-[width] duration-150"
-            style={{ width: `${Math.max(progress * 100, projects.length > 1 ? 8 : 100)}%` }}
-          />
+      {/* Content */}
+      <div
+        className={`${
+          reversed
+            ? "lg:pr-10 text-left"
+            : "lg:pl-10 text-left"
+        }`}
+      >
+        <p className="mb-3 text-xs font-mono uppercase tracking-wider text-[#94A3B8]">
+          Featured Project
+        </p>
+
+        <h3 className="mb-5 font-display text-4xl font-bold tracking-tight text-[#0F172A]">
+          {project.title}
+        </h3>
+
+        <p className="mb-7 max-w-lg text-lg leading-8 text-[#475569]">
+          {project.description}
+        </p>
+
+        <div className="mb-8 flex flex-wrap gap-3">
+          {project.stack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-[#DBEAFE] bg-[#EFF6FF] px-4 py-2 text-sm font-medium text-[#2563EB]"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-6">
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 font-medium text-[#0F172A]"
+          >
+            View Live
+
+            <FiArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
+
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 font-medium text-[#2563EB]"
+          >
+            GitHub
+
+            <FiGithub />
+          </a>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+function Projects() {
+  return (
+    <section id="projects" className="relative w-full py-28 px-6 overflow-hidden">
+      <div className="absolute -z-10 bottom-0 left-0 w-96 h-96 rounded-full bg-[#2563EB]/[0.08] blur-[130px]" />
+
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] uppercase tracking-wide mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED]" />
+            Selected work
+          </span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-[#0F172A] tracking-tight max-w-xl">
+            Products, not just pages.
+          </h2>
+        </motion.div>
+
+        <div className="space-y-24">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
+          ))}
         </div>
       </div>
     </section>

@@ -1,112 +1,130 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { FaQuoteLeft, FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
+const testimonials = [
+  {
+    id: 1,
+    name: "Muhammad Shakir",
+    role: "Software Engineer",
+    image:
+      "/shakir.jpg",
+    review:
+      "Worked with Sheraz on a MERN project and he did a great job. He is very good with React and Node and got the work done quickly. Highly recommend him",
+  },
+  {
+    id: 2,
+    name: "Muzalfa BiBi",
+    role: "Senior Engineer at NexaSecure",
+    image:
+      "/muzalfa.jpg",
+    review:
+      "Sheraz was a great teammate during our internship at NexaSecure. His MERN Stack skills and problem solving approach made him a valuable part of the team.",
+  },
+  {
+    id: 3,
+    name: "Muskan Fatima",
+    role: "Entrepreneur",
+    image:
+      "/muskan.jpg",
+    review:
+      "I had the opportunity to work with Sheraz on a project, and it was a great experience. He is a skilled MERN Stack developer, communicates well, and is dedicated to delivering quality work.",
+  },
+  {
+    id: 4,
+    name: "Muhammad Ali",
+    role: "AI & Agentic Engineer",
+    image:
+      "/muskan.jpg",
+    review:
+      "Sheraz is a great person to work with. He's honest, committed to his work, and makes sure everything is completed properly. Wishing him all the best.",
+  },
+];
+
 function Testimonial() {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Muhammad Shakir",
-      role: "Software Engineer",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHKAwRGIPw0Rw/profile-displayphoto-crop_800_800/B4DZw4chKaHMAI-/0/1770473527951?e=1785369600&v=beta&t=SttZvwBqAwoJPCCpi86GG0wzonuDIn99a7sUpcXBRzQ",
-      review:
-        "Worked with Sheraz on a MERN project and he did a great job. He is very good with React and Node and got the work done quickly. Highly recommend him",
-    },
-    {
-      id: 2,
-      name: "Muzalfa BiBi",
-      role: "Senior Engineer at NexaSecure",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D35AQFC5luZR3nKDg/profile-framedphoto-shrink_800_800/B4DZ5TwTTKJoAk-/0/1779521631891?e=1784628000&v=beta&t=EHk6AQbj1PAgoYewp7EOpsbYUVK7fLqgnJmmetDiag4",
-      review:
-        "Sheraz was a great teammate during our internship at NexaSecure. His MERN Stack skills and problem solving approach made him a valuable part of the team.",
-    },
-    {
-      id: 3,
-      name: "Muskan Fatima",
-      role: "Entrepreneur",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D35AQEuGVti3ETxxA/profile-framedphoto-shrink_800_800/B4DZ2dNVEDHoAg-/0/1776459010668?e=1784628000&v=beta&t=qEhARIApwI19UEVgq7wsvggG45jcrDHLHPZYIMMVtzo",
-      review:
-        "I had the opportunity to work with Sheraz on a project, and it was a great experience. He is a skilled MERN Stack developer, communicates well, and is dedicated to delivering quality work.",
-    },
-    {
-      id: 4,
-      name: "Muhammad Ali",
-      role: "AI & Agentic Engineer",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQFPhrSaC7_nmw/profile-displayphoto-crop_800_800/B4DZ67l47NIYAI-/0/1781263735162?e=1785369600&v=beta&t=cjENTtCBWtNRARX5QUN3HuJTGv5GwvRthmi69bhcOpM",
-      review:
-        "Sheraz is a great person to work with. He's honest, committed to his work, and makes sure everything is completed properly. Wishing him all the best.",
-    },
-  ];
-
   return (
-    <section id="testimonial" className="w-full py-16 px-4">
-      <div className="max-w-6xl mx-auto mb-10">
-        <p className="font-mono text-sm text-[#6FA88F] mb-3">
-          <span className="text-[#6B6455]">05</span> — reviews
-        </p>
-        <h2 className="font-display text-3xl md:text-4xl text-[#F2EDE3]">
-          What clients say
-        </h2>
-      </div>
+    <section id="testimonials" className="relative w-full py-28 px-6 overflow-hidden">
+      <div className="absolute -z-10 top-10 left-1/4 w-96 h-96 rounded-full bg-[#7C3AED]/[0.08] blur-[120px]" />
 
-      <div className="max-w-6xl mx-auto testimonial-swiper">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto mb-14"
+      >
+        <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] uppercase tracking-wide mb-4">
+          <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED]" />
+          Reviews
+        </span>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-[#0F172A] tracking-tight">
+          What clients say.
+        </h2>
+      </motion.div>
+
+      <div className="max-w-6xl mx-auto premium-testimonial-swiper">
         <Swiper
           modules={[Pagination, Autoplay]}
-          spaceBetween={20}
+          spaceBetween={24}
           slidesPerView={1}
-          loop={true}
+          loop
           autoplay={{ delay: 4500, disableOnInteraction: false }}
           pagination={{ clickable: true }}
-          className="!pb-12"
+          className="!pb-14"
           breakpoints={{ 768: { slidesPerView: 2 } }}
         >
           {testimonials.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="bg-[#1C1913] border border-[#332D22] p-7 h-full">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-14 h-14 rounded-full object-cover border border-[#332D22]"
-                  />
-                  <div>
-                    <h3 className="text-[#F2EDE3] font-body font-medium">
-                      {item.name}
-                    </h3>
-                    <p className="text-[#6B6455] font-mono text-xs mt-1">
-                      {item.role}
-                    </p>
-                  </div>
-                </div>
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3 }}
+                className="relative rounded-[28px] border border-[#E2E8F0] bg-white/80 backdrop-blur-xl p-7 h-full shadow-[0_10px_30px_rgba(15,23,42,0.05)] hover:shadow-[0_24px_50px_rgba(15,23,42,0.1)] transition-shadow"
+              >
+                <FaQuoteLeft className="text-[#2563EB]/15 text-3xl mb-4" />
 
-                <p className="text-[#9C9483] font-body mt-6 leading-7 text-sm">
+                <p className="text-[#475569] leading-7 text-sm mb-6 min-h-[90px]">
                   {item.review}
                 </p>
 
-                <div className="mt-6 font-mono text-xs text-[#6FA88F]">
-                  ★★★★★
+                <div className="flex items-center gap-3 pt-5 border-t border-[#E2E8F0]">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-11 h-11 rounded-full object-cover border border-[#E2E8F0]"
+                  />
+                  <div>
+                    <h3 className="text-[#0F172A] font-medium text-sm">{item.name}</h3>
+                    <p className="text-[#94A3B8] text-xs mt-0.5">{item.role}</p>
+                  </div>
+                  <div className="ml-auto flex gap-0.5 text-[#E8A33D] text-xs">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Swiper pagination bullet theming — add once globally or keep scoped here */}
       <style>{`
-        .testimonial-swiper .swiper-pagination-bullet {
-          background: #332D22;
+        .premium-testimonial-swiper .swiper-pagination-bullet {
+          background: #E2E8F0;
           opacity: 1;
+          width: 6px;
+          height: 6px;
+          transition: all 0.3s ease;
         }
-        .testimonial-swiper .swiper-pagination-bullet-active {
-          background: #E8A33D;
+        .premium-testimonial-swiper .swiper-pagination-bullet-active {
+          background: linear-gradient(90deg, #2563EB, #7C3AED);
+          width: 20px;
+          border-radius: 4px;
         }
       `}</style>
     </section>

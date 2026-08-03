@@ -1,109 +1,141 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { CiMenuBurger } from "react-icons/ci";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
-const TABS = [
-  { to: "home", label: "home.jsx" },
-  { to: "about", label: "about.jsx" },
-  { to: "skill", label: "skills.jsx" },
-  { to: "project", label: "projects.jsx" },
-  { to: "testimonial", label: "reviews.jsx" },
-  { to: "contact", label: "contact.jsx" },
+const links = [
+  { name: "Home", to: "home" },
+  { name: "About", to: "about" },
+  { name: "Skills", to: "skills" },
+  { name: "Projects", to: "projects" },
+  { name: "Testimonials", to: "testimonials" },
+  { name: "Contact", to: "contact" },
 ];
 
-const activeTabClasses =
-  "text-[#F2EDE3] bg-[#1C1913] border-t-2 border-t-[#E8A33D] border-b-2 border-b-transparent";
-
-function Nav() {
+const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#15130F]/95 backdrop-blur-md border-b border-[#332D22] font-mono">
-        <div className="flex items-stretch justify-between max-w-6xl mx-auto px-4 md:px-6">
-          {/* "workspace" root */}
-          <div className="flex items-center gap-2 pr-4 text-sm text-[#9C9483] shrink-0">
-            <span className="text-[#6FA88F]">~</span>
-            <span>/sheraz.dev</span>
-          </div>
-
-          {/* Desktop tabs */}
-          <ul className="hidden md:flex items-stretch overflow-x-auto">
-            {TABS.map((tab) => (
-              <li key={tab.to} className="flex">
-                <Link
-                  to={tab.to}
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  offset={-56}
-                  activeClass={activeTabClasses}
-                  className="flex items-center gap-2 px-4 py-4 text-sm text-[#9C9483] border-t-2 border-t-transparent border-b-2 border-b-transparent hover:text-[#F2EDE3] hover:bg-[#1C1913]/60 transition-colors cursor-pointer whitespace-nowrap"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6FA88F]/70" />
-                  {tab.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Burger */}
-          <button
-            className="md:hidden text-2xl text-[#F2EDE3] py-4"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <CiMenuBurger />
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile menu — directory listing */}
-      <div
-        className={`fixed inset-0 z-50 bg-[#15130F] flex flex-col transition-all duration-400 ease-in-out font-mono ${
-          menuOpen
-            ? "translate-x-0 opacity-100"
-            : "translate-x-4 opacity-0 pointer-events-none"
+      <motion.nav
+        initial={{ y: -70 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+            : "bg-transparent"
         }`}
       >
-        <div className="flex items-center justify-between px-6 py-6 border-b border-[#332D22]">
-          <span className="text-sm text-[#9C9483]">
-            <span className="text-[#6FA88F]">~</span>/sheraz.dev
-          </span>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="text-3xl text-[#F2EDE3]"
-            aria-label="Close menu"
+        <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+          {/* Logo */}
+
+          <Link
+            to="home"
+            smooth
+            duration={500}
+            className="cursor-pointer"
           >
-            <IoClose />
+            <h2 className="text-2xl font-bold tracking-tight">
+              Muhammad<span className="text-blue-600">.</span>
+            </h2>
+          </Link>
+
+          {/* Desktop */}
+
+          <div className="hidden lg:flex items-center gap-10">
+            {links.map((item) => (
+              <Link
+                key={item.name}
+                to={item.to}
+                smooth
+                spy
+                offset={-80}
+                duration={500}
+                activeClass="text-blue-600"
+                className="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Button */}
+
+          <Link
+            to="contact"
+            smooth
+            duration={500}
+            offset={-80}
+            className="hidden lg:block"
+          >
+            <button className="px-6 py-3 rounded-full bg-black text-white hover:bg-blue-600 transition">
+              Hire Me
+            </button>
+          </Link>
+
+          {/* Mobile */}
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden text-3xl"
+          >
+            {menuOpen ? <IoClose /> : <HiOutlineMenuAlt3 />}
           </button>
         </div>
+      </motion.nav>
 
-        <ul className="flex flex-col px-2 py-4">
-          {TABS.map((tab, i) => (
-            <li key={tab.to}>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center gap-10"
+          >
+            {links.map((item) => (
               <Link
-                to={tab.to}
-                smooth={true}
+                key={item.name}
+                to={item.to}
+                smooth
                 duration={500}
-                spy={true}
-                offset={-56}
+                offset={-80}
                 onClick={() => setMenuOpen(false)}
-                activeClass="text-[#E8A33D] bg-[#1C1913]"
-                className="flex items-center gap-4 px-4 py-4 text-lg text-[#F2EDE3] rounded-md cursor-pointer hover:bg-[#1C1913] transition-colors"
+                className="text-3xl font-semibold cursor-pointer hover:text-blue-600 transition"
               >
-                <span className="text-xs text-[#6B6455]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {tab.label}
+                {item.name}
               </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+            ))}
+
+            <Link
+              to="contact"
+              smooth
+              duration={500}
+              offset={-80}
+              onClick={() => setMenuOpen(false)}
+            >
+              <button className="bg-black text-white px-8 py-4 rounded-full hover:bg-blue-600 transition">
+                Hire Me
+              </button>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
-}
+};
 
 export default Nav;
