@@ -83,9 +83,9 @@ function Testimonial() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="relative rounded-[28px] border border-[#E2E8F0] bg-white/80 backdrop-blur-xl p-7 h-full shadow-[0_10px_30px_rgba(15,23,42,0.05)] hover:shadow-[0_24px_50px_rgba(15,23,42,0.1)] transition-shadow"
+                className="group relative rounded-[28px] border border-[#E2E8F0] bg-white/80 backdrop-blur-xl p-7 h-full shadow-[0_10px_30px_rgba(15,23,42,0.05)] hover:shadow-[0_24px_50px_rgba(15,23,42,0.1)] transition-shadow"
               >
-                <FaQuoteLeft className="text-[#2563EB]/15 text-3xl mb-4" />
+<FaQuoteLeft className="text-[#2563EB]/20 group-hover:text-[#7C3AED] text-3xl mb-4 transition-all duration-300 group-hover:scale-110" />
 
                 <p className="text-[#475569] leading-7 text-sm mb-6 min-h-[90px]">
                   {item.review}
