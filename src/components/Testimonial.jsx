@@ -40,7 +40,7 @@ const testimonials = [
     name: "Muhammad Ali",
     role: "AI & Agentic Engineer",
     image:
-      "/muskan.jpg",
+      "/ali.png",
     review:
       "Sheraz is a great person to work with. He's honest, committed to his work, and makes sure everything is completed properly. Wishing him all the best.",
   },
