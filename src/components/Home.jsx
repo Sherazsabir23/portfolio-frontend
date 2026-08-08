@@ -8,7 +8,7 @@ import { SiReact, SiNodedotjs, SiMongodb, SiTailwindcss } from "react-icons/si";
 const EASE = [0.16, 1, 0.3, 1];
 
 const STATS = [
-  { value: 2, suffix: "+", label: "years experience" },
+  { value: 3, suffix: "+", label: "years experience" },
   { value: 15, suffix: "+", label: "projects shipped" },
   { value: 10, suffix: "+", label: "happy clients" },
 ];
