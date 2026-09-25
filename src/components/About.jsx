@@ -89,7 +89,7 @@ function About() {
               className="rounded-[28px] border border-[#E2E8F0] bg-white/70 backdrop-blur-xl p-8 md:p-10 shadow-[0_10px_40px_rgba(15,23,42,0.05)]"
             >
               <p className="text-[#475569] leading-8 mb-5">
-                I've spent the last two years building web applications end to
+                I've spent the last three years building web applications end to
                 end — from database schema to the pixels a client's customers
                 actually click on. I work mainly in the MERN stack, but the
                 real job is translating a business problem into something that
