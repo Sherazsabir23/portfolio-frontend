@@ -129,7 +129,7 @@ I build fast, scalable MERN applications with clean architecture and seamless us
            {[
   { Icon: FaGithub, href: "https://github.com/Sherazsabir23", label: "GitHub" },
   { Icon: FaLinkedinIn, href: "https://www.linkedin.com/in/sheraz-ali-454a0236a/", label: "LinkedIn" },
-  { Icon: FaInstagram, href: "https://www.instagram.com/sherazsabir.dev/?hl=en", label: "Instagram" },
+ 
 ].map(({ Icon, href, label }) => (
   <a
     key={label}
