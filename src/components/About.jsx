@@ -59,7 +59,7 @@ function About() {
         >
           <Eyebrow>About</Eyebrow>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-[#0F172A] tracking-tight max-w-2xl leading-tight">
-            Two years of turning briefs into shipped products.
+            Three years of turning briefs into shipped products.
           </h2>
         </motion.div>
 

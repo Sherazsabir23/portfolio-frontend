@@ -77,18 +77,7 @@ function Home() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
         {/* Left */}
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: EASE }}
-            className="inline-flex items-center gap-2 mb-9 px-3.5 py-1.5 rounded-full border border-[#E2E8F0] bg-white/80 backdrop-blur-sm text-xs font-medium text-[#475569]"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-60" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]" />
-            </span>
-            Available for freelance work
-          </motion.div>
+     
 
           <motion.h1
             initial={{ opacity: 0, y: 22, filter: "blur(6px)" }}
