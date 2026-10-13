@@ -19,7 +19,7 @@ const projects = [
     description:
       "A secure SaaS vault for storing and managing sensitive credentials, with encrypted storage and access control built for teams.",
     image: "/kyphora.png",
-    demo: "https://your-kyphora-demo-url.vercel.app/",
+    demo: "https://kyphora-frontend.vercel.app/",
     github: "https://github.com/Sherazsabir23?tab=repositories",
     stack: ["React", "Node.js", "Express", "MongoDB"],
   },
