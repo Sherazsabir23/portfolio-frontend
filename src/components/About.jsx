@@ -3,11 +3,28 @@ import { motion } from "framer-motion";
 import { HiOutlineCode, HiOutlineServer, HiOutlineShoppingCart, HiOutlineLightningBolt } from "react-icons/hi";
 
 const TIMELINE = [
-  { year: "2023", title: "Started freelancing", desc: "First paid MERN projects for small teams." },
-  { year: "2024", title: "Zento platform", desc: "Built a full multi-vendor ecommerce product solo." },
-  { year: "2025", title: "Kyphora SaaS Product", desc: "Built Kyphora — a secure SaaS platform for managing passwords, notes, and digital secrets with end-to-end encryption." },
-  { year: "Now", title: "Independent developer", desc: "Owning projects end to end for founders." },
+  { 
+    year: "2023", 
+    title: "Started freelancing", 
+    desc: "Built first paid MERN projects, landing initial clients and handling responsive frontend layouts." 
+  },
+  { 
+    year: "2024", 
+    title: "Zentro Platform", 
+    desc: "Architected a full multi-vendor e-commerce marketplace solo, implementing state management and multi-user routing." 
+  },
+  { 
+    year: "2025 - 2026", 
+    title: "Contract MERN Developer", 
+    desc: "Joined a remote development team at Webversa Software Solutions, delivering secure APIs and production-ready applications." 
+  },
+  { 
+    year: "Now", 
+    title: "Independent & SaaS Developer", 
+    desc: "Built Kyphora SaaS vault with end-to-end encryption while owning full-stack projects for founders globally." 
+  },
 ];
+
 
 const STACK = ["react", "node.js", "express", "mongodb", "tailwindcss"];
 

@@ -13,6 +13,8 @@ import {
   SiCloudinary,
   SiMongodb,
   SiMongoose,
+  SiPostgresql, 
+  SiPrisma,
   SiVercel,
   SiRailway,
   SiGithub,
@@ -53,12 +55,15 @@ const CATEGORIES = [
   {
     title: "Database",
     accent: "#06B6D4",
-    description: "Designing scalable NoSQL databases and optimized data models.",
+    description: "Designing scalable NoSQL/SQL databases and optimized data models using modern ORMs.",
     skills: [
       { name: "MongoDB", Icon: SiMongodb },
       { name: "Mongoose", Icon: SiMongoose },
+      { name: "PostgreSQL", Icon: SiPostgresql },
+      { name: "Prisma ORM", Icon: SiPrisma },
     ],
   },
+
   {
     title: "Deployment",
     accent: "#10B981",
