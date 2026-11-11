@@ -9,8 +9,8 @@ const EASE = [0.16, 1, 0.3, 1];
 
 const STATS = [
   { value: 3, suffix: "+", label: "years experience" },
-  { value: 15, suffix: "+", label: "projects shipped" },
-  { value: 10, suffix: "+", label: "happy clients" },
+  { value: 50, suffix: "+", label: "projects shipped" },
+  { value: 40, suffix: "+", label: "happy clients" },
 ];
 
 const FLOAT_TECH = [
