@@ -3,26 +3,26 @@ import { motion } from "framer-motion";
 import { HiOutlineCode, HiOutlineServer, HiOutlineShoppingCart, HiOutlineLightningBolt } from "react-icons/hi";
 
 const TIMELINE = [
-  { 
-    year: "2023", 
-    title: "Started freelancing", 
-    desc: "Built first paid MERN projects, landing initial clients and handling responsive frontend layouts." 
-  },
-  { 
-    year: "2024", 
-    title: "Zentro Platform", 
-    desc: "Architected a full multi-vendor e-commerce marketplace solo, implementing state management and multi-user routing." 
-  },
-  { 
-    year: "2025 - 2026", 
-    title: "Contract MERN Developer", 
-    desc: "Joined a remote development team at Webversa Software Solutions, delivering secure APIs and production-ready applications." 
-  },
-  { 
-    year: "Now", 
-    title: "Independent & SaaS Developer", 
-    desc: "Built Kyphora SaaS vault with end-to-end encryption while owning full-stack projects for founders globally." 
-  },
+  {
+  year: "2023",
+  title: "Started Learning MERN",
+  desc: "Began learning full-stack web development, building projects with React, Node.js, Express and MongoDB."
+},
+{
+  year: "Apr 2024",
+  title: "Started Freelancing",
+  desc: "Began working as an independent Full Stack MERN Developer, building and deploying web applications end to end."
+},
+{
+  year: "2024",
+  title: "Zentro Platform",
+  desc: "Built a full multi-seller e-commerce marketplace solo, with three role-based interfaces, Redux Toolkit state management and seller dashboards."
+},
+{
+  year: "Now",
+  title: "Independent & SaaS Developer",
+  desc: "Built Kyphora, a SaaS password manager with encrypted storage, 2FA and a security dashboard, while continuing to build full-stack projects."
+},
 ];
 
 
